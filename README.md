@@ -1,1 +1,1 @@
-# Healthcare-Claims-Analytics-Dashboard-
+# Healthcare Claims Analytics Dashboard
