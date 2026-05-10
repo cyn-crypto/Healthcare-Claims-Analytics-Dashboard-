@@ -1,41 +1,80 @@
-# Healthcare Claims Analytics Dashboard
+# 🏥 Healthcare Claims Analytics Dashboard
 
-A complete end-to-end analytics project demonstrating healthcare claims data analysis using **Python**, **SQL**, **Tableau**, and **Power BI**.
+> **End-to-end healthcare data analytics project** — from raw synthetic claims data to interactive dashboards — built with Python, SQL, Tableau, and Power BI.
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://python.org)
+[![SQL](https://img.shields.io/badge/SQL-SQLite-003B57?style=flat&logo=sqlite&logoColor=white)](https://sqlite.org)
+[![Tableau](https://img.shields.io/badge/Tableau-Ready-E97627?style=flat&logo=tableau&logoColor=white)](https://tableau.com)
+[![Power BI](https://img.shields.io/badge/Power%20BI-Ready-F2C811?style=flat&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-52C8A4.svg?style=flat)](LICENSE)
 
 ---
 
-## 📁 Project Structure
+## 🌐 Live Dashboard
+
+**[→ View Interactive Dashboard](https://your-username.github.io/healthcare-claims-analytics/dashboard.html)**
+
+> Browse all 8 analytics panels directly in your browser — no setup required.
+
+---
+
+## 👤 About Me
+
+I'm a healthcare data analyst with a passion for turning messy, complex claims datasets into clear, actionable insights. My work sits at the intersection of **clinical operations**, **financial performance**, and **quality improvement** — areas where good data storytelling genuinely changes outcomes.
+
+I specialize in:
+- **Healthcare claims analytics** — utilization trends, cost variation, readmission drivers
+- **Data pipeline design** — from raw patient-level data to executive-ready dashboards
+- **Quality & compliance reporting** — HEDIS, readmission benchmarks, denial management
+- **BI tool expertise** — Tableau, Power BI, and Python-based dashboarding
+
+This project reflects the kind of work I do day-to-day: building rigorous data validation checks, writing analytical SQL that stakeholders can trust, and visualizing the findings in ways that drive real decisions — whether that's identifying high-cost patient cohorts, flagging regional cost outliers, or tracking 30-day readmission trends across payer lines.
+
+If you're working on healthcare analytics challenges and want to connect, find me on [LinkedIn](https://linkedin.com/in/your-profile) or reach out via [email](mailto:you@example.com).
+
+---
+
+## 📊 Dashboard Previews
+
+| Executive KPI Summary | Regional Cost Variation |
+|:---------------------:|:-----------------------:|
+| ![KPI](dashboard/01_kpi_summary.png) | ![Regional](dashboard/02_regional_cost.png) |
+
+| 30-Day Readmission Analysis | Payer Mix & Coverage |
+|:---------------------------:|:--------------------:|
+| ![Readmission](dashboard/03_readmission_analysis.png) | ![Payer](dashboard/04_payer_analysis.png) |
+
+| Utilization Heatmap | Cost Trends (YoY) |
+|:-------------------:|:-----------------:|
+| ![Heatmap](dashboard/05_utilization_heatmap.png) | ![Trend](dashboard/06_cost_trend.png) |
+
+| Quality & Operational Metrics | Patient Demographics |
+|:-----------------------------:|:--------------------:|
+| ![Quality](dashboard/07_quality_metrics.png) | ![Demographics](dashboard/08_demographics.png) |
+
+---
+
+## 🗂️ Project Structure
 
 ```
 healthcare-claims-analytics/
 ├── data/
 │   ├── patients.csv              # 2,000 synthetic patients
-│   ├── claims.csv                # 15,000 synthetic claims (2022–2024)
-│   ├── quality_metrics.csv       # Pre-aggregated regional quality KPIs
-│   └── claims.db                 # SQLite database (auto-generated)
-│
+│   ├── claims.csv                # 15,000 claims (2022–2024)
+│   └── quality_metrics.csv       # Regional quality KPIs
 ├── sql/
-│   └── analytics_queries.sql     # Schema DDL + 20+ analytical SQL queries
-│
+│   └── analytics_queries.sql     # Schema + 20+ analytical queries
 ├── python/
-│   ├── generate_data.py          # Synthetic data generator (numpy/pandas)
-│   ├── analytics.py              # Full analytics pipeline → 8 chart outputs
-│   └── data_validation.py        # 10 QC checks on patient-level data
-│
+│   ├── generate_data.py          # Synthetic data generator
+│   ├── analytics.py              # Full analytics + chart pipeline
+│   └── data_validation.py        # 10 QC checks
 ├── dashboard/
-│   ├── 01_kpi_summary.png           # Executive KPI summary + sparklines
-│   ├── 02_regional_cost.png         # Regional cost variation
-│   ├── 03_readmission_analysis.png  # 30-day readmission analysis
-│   ├── 04_payer_analysis.png        # Payer mix & coverage
-│   ├── 05_utilization_heatmap.png   # Facility × Region heatmap
-│   ├── 06_cost_trend.png            # Monthly & YoY cost trends
-│   ├── 07_quality_metrics.png       # Denial rate & quality KPIs
-│   ├── 08_demographics.png          # Patient demographics & stratification
-│   ├── healthcare_claims_analytics.xlsx   # Tableau/Power BI ready workbook
-│   ├── data_validation_report.csv         # QC results
-│   ├── tableau_setup_guide.xml            # Tableau connection + calc fields
-│   └── powerbi_setup.m                    # Power Query M + DAX measures
-│
+│   ├── 01_kpi_summary.png … 08_demographics.png
+│   ├── healthcare_claims_analytics.xlsx
+│   ├── tableau_setup_guide.xml
+│   └── powerbi_setup.m
+├── dashboard.html                # Self-contained interactive viewer
+├── requirements.txt
 └── README.md
 ```
 
@@ -43,95 +82,52 @@ healthcare-claims-analytics/
 
 ## 🚀 Quick Start
 
-### 1. Install dependencies
 ```bash
-pip install pandas numpy matplotlib seaborn openpyxl
-```
-
-### 2. Generate synthetic data
-```bash
+git clone https://github.com/your-username/healthcare-claims-analytics.git
+cd healthcare-claims-analytics
+pip install -r requirements.txt
 python python/generate_data.py
-```
-
-### 3. Run data validation
-```bash
 python python/data_validation.py
-```
-
-### 4. Generate all charts and Excel export
-```bash
 python python/analytics.py
+open dashboard.html
 ```
 
 ---
 
-## 📊 Dashboard Outputs
+## 🔍 Key Analyses
 
-| Chart | Description |
-|-------|-------------|
-| 01 KPI Summary | Total spend, claims, avg cost, readmit %, denial rate + sparkline |
-| 02 Regional Cost | Bar + bubble chart of avg cost and total spend by region |
-| 03 Readmission | By region, by diagnosis, trend by year |
-| 04 Payer Analysis | Volume pie, billed vs paid bar, coverage rate |
-| 05 Utilization Heatmap | Claim count matrix: facility type × region |
-| 06 Cost Trend | Monthly spend over 3 years + regional YoY lines |
-| 07 Quality Metrics | Denial rate, avg LOS, ER visit rate |
-| 08 Demographics | Cost by age group, chronic conditions, gender split |
+- **Utilization** — monthly claim volume, facility mix, top diagnoses & procedures
+- **Cost** — regional variation, payer coverage rates, high-cost cohort (top 5%)
+- **Readmissions** — 30-day rates by region, diagnosis, year & chronic condition count
+- **Quality** — denial rates by payer, avg LOS, ER visit rates, YoY comparisons
+- **Data Validation** — 10 automated QC checks (nulls, orphans, duplicates, anomalies)
 
 ---
 
-## 🗄️ Key SQL Analyses
+## 📋 Key Findings
 
-- **Utilization**: Monthly volume trend, facility mix, top diagnoses
-- **Cost**: Regional variation, payer coverage, high-cost cohort (top 5%)
-- **Readmissions**: By region, diagnosis, year, chronic condition count
-- **Claims Management**: Denial rate by payer, claim status distribution
-- **YoY Comparison**: Window functions for year-over-year cost change %
-
----
-
-## 📋 Data Validation (10 QC Rules)
-
-| Check | Description |
-|-------|-------------|
-| QC-01 | Null patient IDs |
-| QC-02 | Null service dates |
-| QC-03 | Non-positive costs |
-| QC-04 | Paid > billed (overpayments) |
-| QC-05 | Orphaned claims (missing patient) |
-| QC-06 | LOS > 30 days |
-| QC-07 | Duplicate claims |
-| QC-08 | Future-dated claims |
-| QC-09 | Invalid readmission flags |
-| QC-10 | Unknown region codes |
+- **Northeast & West** regions show ~25% higher avg claim costs vs Southwest
+- **30-day readmission rates** rise ~2% per additional chronic condition
+- **Self-Pay** patients bear ~55% of billed costs out-of-pocket
+- **Top 5% high-cost patients** account for ~40% of total spend
+- **Denial rates >5%** flagged across two payers — an improvement opportunity
 
 ---
 
-## 🔗 Tableau / Power BI
+## 🛠️ Tech Stack
 
-1. Open `dashboard/healthcare_claims_analytics.xlsx`
-2. Import all 6 sheets as separate tables
-3. Follow `tableau_setup_guide.xml` or `powerbi_setup.m` for calculated fields, DAX measures, and recommended dashboard layouts
-4. Use the provided color palette: Teal `#00B4D8`, Coral `#FF6B6B`, Amber `#FFB347`, Mint `#52C8A4`
-
----
-
-## 🔧 Tech Stack
-
-| Tool | Purpose |
-|------|---------|
-| Python / pandas / numpy | Data generation, analytics pipeline |
-| Matplotlib | Chart generation (8 dashboard panels) |
-| SQLite / SQL | Data storage, analytical queries |
-| OpenPyXL | Excel workbook export |
-| Tableau / Power BI | Interactive BI dashboards (via xlsx import) |
+| Layer | Tools |
+|-------|-------|
+| Data Generation | Python, NumPy, Pandas |
+| Storage & Queries | SQLite, SQL (CTEs, window functions, views) |
+| Validation | Python — 10 automated QC rules |
+| Visualization | Matplotlib — 8 dashboard panels |
+| BI Export | OpenPyXL — 6-sheet Excel workbook |
+| BI Dashboards | Tableau / Power BI (xlsx import) |
+| Web Viewer | Self-contained HTML (no server needed) |
 
 ---
 
-## 📌 Key Findings (Synthetic Data)
+## 📄 License
 
-- **Northeast** and **West** show ~25% higher avg claim costs vs Southwest
-- **30-day readmission rates** increase significantly with each additional chronic condition
-- **Self-Pay** payers have the lowest coverage rate (~45%), creating highest OOP burden
-- **Hospital** facility claims represent the highest avg cost and longest LOS
-- **Denial rates** vary by payer; rates >5% flagged as operational risk
+MIT — free to use, adapt, and build on.
