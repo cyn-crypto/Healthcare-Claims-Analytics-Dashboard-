@@ -12,7 +12,7 @@
 
 ## 🌐 Live Dashboard
 
-**[→ View Interactive Dashboard](https://github.com/cyn-crypto/Healthcare-Claims-Analytics-Dashboard-/blob/644aac57e059a74ca8d7ae962928434552d6fb48/dashboard.html)**
+**[→ View Interactive Dashboard](https://github.com/cyn-crypto/Healthcare-Claims-Analytics-Dashboard-/dashboard.html)**
 
 > Browse all 8 analytics panels directly in your browser — no setup required.
 
