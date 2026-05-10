@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!--
+  Healthcare Claims Analytics – Tableau Connection Guide
+  ───────────────────────────────────────────────────────
+  Import the Excel file:  dashboard/healthcare_claims_analytics.xlsx
+  Six sheets → six data sources (or use relationships between them).
+
+  RECOMMENDED DASHBOARDS
+  ═══════════════════════
+
+  1. Executive Summary
+     Sheet: Claims_Summary
+     KPIs  : SUM([total_spend]) / SUM([claims]) / AVG([avg_cost]) / SUM([readmissions])
+     Viz   : Text KPI tiles, monthly sparkline (service_year + service_quarter)
+
+  2. Regional Cost Heatmap
+     Sheet: Regional_Cost
+     Viz   : Filled map (Region) colored by avg_cost
+             Bar chart: region vs avg_cost, segmented by service_year
+
+  3. Readmission Dashboard
+     Sheet: Readmissions
+     Viz   : Bar – readmit_pct by region
+             Line – readmit_pct trend by service_year
+             Table – diagnosis_desc + readmit_pct sorted DESC
+
+  4. Payer Analysis
+     Sheet: Payer_Analysis
+     Viz   : Pie – claims by payer
+             Grouped bar – avg_billed vs avg_paid by payer
+             Color-coded bar – denial_rate_pct (red > 5 %)
+
+  5. Patient Stratification
+     Sheet: Patient_Level
+     Viz   : Scatter – total_cost vs total_claims sized by readmissions
+             Histogram – age buckets (10-yr bins) colored by avg total_cost
+             Treemap – payer × region × total_cost
+
+  6. Quality Metrics
+     Sheet: Quality_Metrics
+     Viz   : Line – readmission_rate_pct by region over year
+             Bar – avg_los_hospital by region
+             KPI tiles per region
+
+  CALCULATED FIELDS (create in Tableau)
+  ══════════════════════════════════════
+  Cost per Readmission:
+    SUM([total_spend]) / NULLIF(SUM([readmissions]), 0)
+
+  YoY Cost Change %:
+    (ZN(SUM([avg_cost])) - LOOKUP(ZN(SUM([avg_cost])), -1))
+    / ABS(LOOKUP(ZN(SUM([avg_cost])), -1))
+
+  Payer Coverage %:
+    SUM([avg_paid]) / NULLIF(SUM([avg_billed]), 0) * 100
+
+  FILTERS
+  ═══════
+  • service_year  (2022 / 2023 / 2024)
+  • region        (multi-select)
+  • payer         (multi-select)
+  • facility_type (multi-select)
+-->
+<tableau-workbook-notes version="2024.1">
+  <data-sources>
+    <source name="Claims_Summary"   file="healthcare_claims_analytics.xlsx" sheet="Claims_Summary"/>
+    <source name="Regional_Cost"    file="healthcare_claims_analytics.xlsx" sheet="Regional_Cost"/>
+    <source name="Payer_Analysis"   file="healthcare_claims_analytics.xlsx" sheet="Payer_Analysis"/>
+    <source name="Readmissions"     file="healthcare_claims_analytics.xlsx" sheet="Readmissions"/>
+    <source name="Quality_Metrics"  file="healthcare_claims_analytics.xlsx" sheet="Quality_Metrics"/>
+    <source name="Patient_Level"    file="healthcare_claims_analytics.xlsx" sheet="Patient_Level"/>
+  </data-sources>
+
+  <color-palette name="Healthcare Claims">
+    <color>#00B4D8</color>  <!-- Teal    – primary  -->
+    <color>#FF6B6B</color>  <!-- Coral   – secondary -->
+    <color>#FFB347</color>  <!-- Amber   – warning   -->
+    <color>#52C8A4</color>  <!-- Mint    – positive  -->
+    <color>#A78BFA</color>  <!-- Lavender– neutral   -->
+    <color>#03045E</color>  <!-- Navy    – dark      -->
+  </color-palette>
+</tableau-workbook-notes>

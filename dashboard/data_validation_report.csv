@@ -1,0 +1,11 @@
+check,flagged_records,status
+QC-01 Null patient_id,0,✅ PASS
+QC-02 Null service_date,0,✅ PASS
+QC-03 Non-positive total_cost,0,✅ PASS
+QC-04 Paid > billed (overpayment),0,✅ PASS
+QC-05 Orphaned claims,0,✅ PASS
+QC-06 LOS > 30 days,0,✅ PASS
+QC-07 Duplicate (patient+date+diag+proc),0,✅ PASS
+QC-08 Future-dated claims,0,✅ PASS
+QC-09 Invalid readmission flag,0,✅ PASS
+QC-10 Unknown region,0,✅ PASS
