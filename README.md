@@ -2,7 +2,7 @@
 
 A full-stack analytics dashboard for exploring synthetic healthcare claims data — tracking **readmission rates**, **treatment utilization**, **regional cost variation**, and **quality metrics**.
 
-Built with React + Recharts. All data is synthetically generated (no real patient data).
+Built with Python, SQL and Tableau. All data is synthetically generated (no real patient data).
 
 ---
 
