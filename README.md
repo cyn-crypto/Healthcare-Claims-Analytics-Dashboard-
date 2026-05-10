@@ -18,22 +18,6 @@
 
 ---
 
-## 👤 About Me
-
-I'm a healthcare data analyst with a passion for turning messy, complex claims datasets into clear, actionable insights. My work sits at the intersection of **clinical operations**, **financial performance**, and **quality improvement** — areas where good data storytelling genuinely changes outcomes.
-
-I specialize in:
-- **Healthcare claims analytics** — utilization trends, cost variation, readmission drivers
-- **Data pipeline design** — from raw patient-level data to executive-ready dashboards
-- **Quality & compliance reporting** — HEDIS, readmission benchmarks, denial management
-- **BI tool expertise** — Tableau, Power BI, and Python-based dashboarding
-
-This project reflects the kind of work I do day-to-day: building rigorous data validation checks, writing analytical SQL that stakeholders can trust, and visualizing the findings in ways that drive real decisions — whether that's identifying high-cost patient cohorts, flagging regional cost outliers, or tracking 30-day readmission trends across payer lines.
-
-If you're working on healthcare analytics challenges and want to connect, find me on [LinkedIn](https://linkedin.com/in/your-profile) or reach out via [email](mailto:you@example.com).
-
----
-
 ## 📊 Dashboard Previews
 
 | Executive KPI Summary | Regional Cost Variation |
