@@ -4,8 +4,8 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://python.org)
 [![SQL](https://img.shields.io/badge/SQL-SQLite-003B57?style=flat&logo=sqlite&logoColor=white)](https://sqlite.org)
-[![Tableau](https://img.shields.io/badge/Tableau-Ready-E97627?style=flat&logo=tableau&logoColor=white)](https://tableau.com)
-[![Power BI](https://img.shields.io/badge/Power%20BI-Ready-F2C811?style=flat&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com)
+![Tableau](https://img.shields.io/badge/Tableau-Ready-E97627?style=flat&logo=tableau&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power%20BI-Ready-F2C811?style=flat&logo=powerbi&logoColor=black)
 [![License: MIT](https://img.shields.io/badge/License-MIT-52C8A4.svg?style=flat)](LICENSE)
 
 ---
